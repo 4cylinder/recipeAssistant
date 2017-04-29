@@ -11,32 +11,32 @@ All pages share a navigation bar from which the user can perform searches or acc
 
 Our index page, showing all existing recipes:
 
-![image](https://github.com/4cylinder/recipeAssistant/website/0.png?raw=true)
+![image](https://github.com/4cylinder/recipeAssistant/blob/master/website/0.png?raw=true)
 
 Index page on mobile:
 
-![image](https://github.com/4cylinder/recipeAssistant/website/1.png?raw=true)
+![image](https://github.com/4cylinder/recipeAssistant/blob/master/website/1.png?raw=true)
 
 Page for adding a recipe:
 
-![image](https://github.com/4cylinder/recipeAssistant/website/2.png?raw=true)
+![image](https://github.com/4cylinder/recipeAssistant/blob/master/website/2.png?raw=true)
 
 Viewing an individual recipe (mobile):
 
-![image](https://github.com/4cylinder/recipeAssistant/website/3.png?raw=true)
+![image](https://github.com/4cylinder/recipeAssistant/blob/master/website/3.png?raw=true)
 
 Viewing ingredients straight away (mobile by pressing the blue “Ingredients” button in the card):
 
-![image](https://github.com/4cylinder/recipeAssistant/website/4.png?raw=true)
+![image](https://github.com/4cylinder/recipeAssistant/blob/master/website/4.png?raw=true)
 
 Viewing recipe steps straight away (mobile) by pressing the blue “Steps” button in the card:
 
-![image](https://github.com/4cylinder/recipeAssistant/website/5.png?raw=true)
+![image](https://github.com/4cylinder/recipeAssistant/blob/master/website/5.png?raw=true)
 
 Input validation on “create recipe” page, warning the user of a missing field:
 
-![image](https://github.com/4cylinder/recipeAssistant/website/6.png?raw=true)
+![image](https://github.com/4cylinder/recipeAssistant/blob/master/website/6.png?raw=true)
 
 Notification to user that a new recipe was successfully inserted:
 
-![image](https://github.com/4cylinder/recipeAssistant/website/7.png?raw=true)
+![image](https://github.com/4cylinder/recipeAssistant/blob/master/website/7.png?raw=truee)
