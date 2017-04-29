@@ -9,7 +9,7 @@ This application uses both a desktop and a voice interface. The `website` folder
 * If you used the python command, navigate to 127.0.0.1:8000 in your browser.
 
 **Setup Instructions (Alexa Skill)**
-* Enter the `alexa` folder and find the `action.zip` file
+* Enter the `alexa` folder and find the `alexa.zip` file
 * Upload the entire zipped archive as your lambda function in the AWS Console.
 
 **Technologies used**:
