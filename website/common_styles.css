@@ -1,0 +1,34 @@
+body {
+    background-color: #f2f1f1;
+}
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+.navbar-toggle {
+    z-index:3;
+}
+.card {
+	display: inline-block;
+	width: 25rem;
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.62);
+    box-shadow: 1px 1px 2px;
+}
+
+.add-row {
+	margin-top: 5rem;
+}
+/*.recipe-container {
+	margin-left: 15%;
+    margin-right: 15%;
+}*/
+.recipe-img {
+	max-width: 30%;
+}

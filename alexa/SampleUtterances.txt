@@ -1,0 +1,67 @@
+whichRecipeIntent find {RECIPES}
+whichRecipeIntent find the recipe for {RECIPES}
+whichRecipeIntent i'd like to make {RECIPES}
+whichRecipeIntent i'd like to bake {RECIPES}
+whichRecipeIntent i'd like to cook {RECIPES}
+whichRecipeIntent i want to make {RECIPES}
+whichRecipeIntent i want {RECIPES}
+whichRecipeIntent i would like {RECIPES}
+whichRecipeIntent let's make {RECIPES}
+whichRecipeIntent let's bake {RECIPES}
+whichRecipeIntent let's cook {RECIPES}
+whichRecipeIntent how do i make {RECIPES}
+whichRecipeIntent how do i bake {RECIPES}
+whichRecipeIntent how do i cook {RECIPES}
+whichRecipeIntent get the recipe for {RECIPES}
+whichRecipeIntent get me the recipe for {RECIPES}
+helpIntent what can i make
+helpIntent what can i say
+quitIntent exit recipe  assistant
+quitIntent quit recipe  assistant
+quitIntent quit ingredients
+quitIntent quit recipes
+quitIntent exit recipes
+quitIntent exit  ingredients
+ingredientIntent ingredients
+ingredientIntent tell me the ingredients
+ingredientIntent what are the ingredients
+ingredientIntent what ingredients do i need
+ingredientIntent what items do i need
+ingredientIntent what do i need
+ingredientIntent what do i need for this recipe
+ingredientIntent start ingredients
+ingredientIntent begin ingredients
+nextIngredientIntent next ingredient
+nextIngredientIntent next
+previousIngredientIntent last ingredient
+previousIngredientIntent previous ingredient
+previousIngredientIntent go back one ingredient
+previousIngredientIntent go back an ingredient
+startAgainIngredientIntent start again
+startAgainIngredientIntent restart ingredients
+startAgainIngredientIntent start over
+startAgainIngredientIntent start ingredients over
+startAgainIngredientIntent read the ingredients again
+startAgainIngredientIntent tell me the ingredients again
+mainMenuIntent main menu
+mainMenuIntent go to main menu
+mainMenuIntent go to the main menu
+recipeIntent read recipe
+recipeIntent read the recipe
+recipeIntent read me the recipe
+recipeIntent read me the steps
+recipeIntent read me the instructions
+recipeIntent start recipe
+recipeIntent start the recipe
+recipeIntent begin recipe
+recipeIntent begin the recipe
+nextStepRecipeIntent next step
+nextStepRecipeIntent go to the next step
+nextStepRecipeIntent what's the next step
+previousStepRecipeIntent last step
+previousStepRecipeIntent previous step
+previousStepRecipeIntent what's the previous step
+previousStepRecipeIntent what was the previous step
+previousStepRecipeIntent go to the previous step
+previousStepRecipeIntent go back one step
+previousStepRecipeIntent go back a step

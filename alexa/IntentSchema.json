@@ -1,0 +1,61 @@
+{
+	"intents": [
+		{
+			"intent": "whichRecipeIntent",
+			"slots": [
+				{
+					"name": "RECIPES",
+					"type": "AMAZON.Food"
+				}
+			]
+		},
+		
+		{
+			"intent": "helpIntent"
+		},
+		
+		{
+			"intent": "quitIntent"
+		},
+		
+		{
+			"intent": "ingredientIntent"
+		},
+		
+		{
+			"intent": "nextIngredientIntent"
+		},
+		
+		{
+			"intent": "previousIngredientIntent"
+		},
+		
+		{
+			"intent": "startAgainIngredientIntent"
+		},
+		
+		{
+			"intent": "mainMenuIntent"
+		},
+		
+		{
+			"intent": "recipeIntent"
+		},
+		
+		{
+			"intent": "nextStepRecipeIntent"
+		},
+		
+		{
+			"intent": "previousStepRecipeIntent"
+		},
+		
+		{
+			"intent": "AMAZON.YesIntent"
+		},
+		
+		{
+			"intent": "AMAZON.NoIntent"
+		}
+	]
+}

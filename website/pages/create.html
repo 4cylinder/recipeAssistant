@@ -1,0 +1,218 @@
+<title>{{ title }}</title>
+<div class="container">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<span class="navbar-brand">New Recipe</span>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="#/">BACK</a></li>
+			</ul>
+			
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						Settings <span class="glyphicon glyphicon-cog"></span>
+					</a>
+					<ul class="dropdown-menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Log out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="row">
+		
+
+    <form id='recipeForm' method='post' action="#/" class="col-md-12" enctype="multipart/form-data" novalidate>
+        <div class="form-group">
+            <label for="name" class="control-label col-md-4">Recipe Name</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control input-sm" name='name' id="name" placeholder="New Recipe" required="true" onkeypress="this.value = this.value.toLowerCase();">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ingredients" class="control-label col-md-4">Ingredients</label>
+            <div class="col-md-8">
+            	<div id='ingredientsPreview'>
+                    <p>You have not added any ingredients.</p>
+            	</div>
+            	<input type="text" class="form-control input-sm" id="ingredientInput" placeholder="Type an ingredient and click the '+' button to add. Click the '-' button to remove the last ingredient.">
+                <button id="addIngredient" class="btn add-more" type="button">+</button>
+                <button id="removeIngredient" class="btn btn-danger remove-me">-</button>
+                <input type="hidden" name="ingredients" id="ingredients" required="true">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ingredients" class="control-label col-md-4">Steps</label>
+            <div class="col-md-8">
+            	<div id='stepsPreview'>
+                    <p>You have not added any steps.</p>
+            	</div>
+            	<input type="text" class="form-control input-sm" id="stepInput" placeholder="Type a step and click the '+' button to add. Click the '-' button to remove the last step. Do not number your steps.">
+                <button id="addStep" class="btn add-more" type="button">+</button>
+                <button id="removeStep" class="btn btn-danger remove-me">-</button>
+                <input type="hidden" name="steps" id="steps" required="true">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="picture" class="control-label col-md-4">Photo (URL)</label>
+            <div class="col-md-8">
+            	<label for="picture" class="control-label col-md-2">
+            		<img id="preview" src="//placehold.it/100" alt="your image" height="100" style="cursor:pointer;"/>
+            	</label>
+                <input type="text" class="form-control input-sm" name='picture' id="picture" required="true">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+                <button type="submit" class="btn btn-primary">Submit Recipe</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row text-center" id="alertRow"></div>
+
+	</div>
+
+</div>
+
+<script>
+$(function(){
+	var alertSuccess = "<div class='alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>";
+    var alertWarning = "<div class='alert alert-warning'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>";
+    var ingredientList = new Array();
+    var stepList = new Array();
+
+    $('#addIngredient').click(function(){
+        if ($('#ingredientInput').val()=="")
+            return;
+        if (ingredientList.length==0){
+            $('#ingredientsPreview').html("");
+        }
+        var ingredient = $('#ingredientInput').val();
+        ingredientList.push(ingredient);
+        $('#ingredientsPreview').append("<p>"+ingredient+"</p>");
+        $('#ingredientInput').val("");
+    });
+
+    $('#removeIngredient').click(function(){
+        if (ingredientList.length>0) {
+            ingredientList.pop();
+            $('#ingredientsPreview').children().last().remove();
+        }
+        if (ingredientList.length==0) {
+            $('#ingredientsPreview').html("You have not added any ingredients.");
+        }
+    });
+
+    $('#addStep').click(function(){
+        if ($('#stepInput').val()=="")
+            return;
+        if (stepList.length==0){
+            $('#stepsPreview').html("");
+        }
+        var step = $('#stepInput').val();
+        stepList.push(step);
+        $('#stepsPreview').append("<p>"+(stepList.length)+". "+step+"</p>");
+        $('#stepInput').val("");
+    });
+
+    $('#removeStep').click(function(){
+        if (stepList.length>0) {
+            stepList.pop();
+            $('#stepsPreview').children().last().remove();
+        }
+        if (stepList.length==0) {
+            $('#stepsPreview').html("You have not added any steps.");
+        }
+    });
+
+    $('#picture').change(function(){
+        var photoURL = $(this).val();
+        if (photoURL!=""){
+            $('#preview').attr('src',photoURL);
+        }
+    });
+
+	$("#recipeForm").submit(function(e){
+        e.preventDefault(); //STOP default action
+        // input validation
+        if (ingredientList.length==0) {
+            $("#alertRow").html(alertWarning+"You need to add ingredients!</strong></div>");
+            return;
+        }
+        if (stepList.length==0) {
+            $("#alertRow").html(alertWarning+"You need to add steps!</strong></div>");
+            return;
+        }
+        if ($('#picture').val()=="") {
+            $("#alertRow").html(alertWarning+"You need to add a picture!</strong></div>");
+            return;
+        }
+        if ($('#name').val()=="") {
+            $("#alertRow").html(alertWarning+"You need to name your recipe!</strong></div>");
+            return;
+        }
+        // Encode the arrays for the sake of DynamoDB
+        $('#ingredients').val(JSON.stringify(ingredientList));
+        $('#steps').val(JSON.stringify(stepList));
+        // make sure recipe name is lowercase
+        $('#name').val($('#name').val().toLowerCase());
+
+        var dynamoUrl = "https://rj9ozhp0k3.execute-api.us-east-1.amazonaws.com/prod/accessRecipeDB";
+
+        // get a new ID by counting # of objects
+        $.get(dynamoUrl+"?TableName=recipes", function(data, status){
+            var recipeId = data.Items.length;
+            // serialize the form data into an object to send out
+            var formData = JSON.stringify({
+                "TableName":"recipes",
+                "Item": {
+                    "id": recipeId,
+                    "name": $('#name').val(),
+                    "ingredients": $('#ingredients').val(),
+                    "steps": $('#steps').val(),
+                    "imgurl": $('#picture').val()
+                }
+            });
+
+            $.ajax({
+                url : dynamoUrl+"?TableName=recipes",
+                method: "POST",
+                data : formData,
+                processData: false,
+                contentType: false,
+                success:function(data, textStatus, jqXHR) {
+                    $("#alertRow").html(alertSuccess+"Your recipe was inserted.</strong></div>");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    $("#alertRow").html(alertWarning+"There was a problem inserting your recipe. Please refresh and try again.</strong></div>");   
+                }
+            });
+        });
+    });
+
+});
+    
+</script>
+</html>
