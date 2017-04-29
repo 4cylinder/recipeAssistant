@@ -2,7 +2,7 @@
 
 Program flow for our Alexa skill:
 
-![Flow Diagram](https://github.com/4cylinder/recipeAssistant/alexa/AlexaFlow.jpg)
+![Flow Diagram](https://github.com/4cylinder/recipeAssistant/blob/master/alexa/AlexaFlow.jpg?raw=true)
 
 Upon opening the Recipe Assistant skill, the user is asked what recipe they would like to make. The user can respond in one of three ways:
 
