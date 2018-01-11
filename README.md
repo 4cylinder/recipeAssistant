@@ -2,7 +2,7 @@
 
 **Group 11**: T.S. Yew, Caitlin Gruis, David Winer, William Ho
 
-This application uses both a desktop and a voice interface. The `website` folder contains an AngularJS-based serverless web app which allows users to create new recipes, which are stored in a DynamoDB table. The `alexa` folder an Alexa skill which lets users ask Alexa what ingredients they need for a particular recipe and what the recipe steps are.
+This application uses both a desktop and a voice interface. The `website` folder contains an AngularJS-based serverless web app which allows users to create new recipes, which are stored in a DynamoDB table. The `alexa` folder contains an Alexa skill which lets users ask Alexa what ingredients they need for a particular recipe and what the recipe steps are.
 
 **Setup Instructions (Website)**
 * Enter the `website` folder and run `python -m SimpleHttpServer`, or if you already have a HTTP server (i.e. Apache), copy the website folder to your server’s location.
